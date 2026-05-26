@@ -1,0 +1,6 @@
+{
+  "name": "Kasir Kantin Sekolah",
+  "description": "Aplikasi Kasir Kantin Sekolah (Point of Sale) POS interaktif, responsif, dan terintegrasi dengan Google Apps Script backend.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
