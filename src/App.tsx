@@ -51,9 +51,10 @@ export default function App() {
     const oldUrl1 = 'https://script.google.com/macros/s/AKfycbxhZKxVjsKqt0XbJUpQCav1FFmHhLYLVYWNtNlmCOtebUtT3m07Zfi3adAySfW6UR4A/exec';
     const oldUrl2 = 'https://script.google.com/macros/s/AKfycbkmRG4usRZXsvCd_lTBs8DeukKhrDtV8_Q8gMYi_IggSbbXPsHbx3SJDKY3gjNLnl/exec';
     const oldUrl3 = 'https://script.google.com/macros/s/AKfycbxbkmRG4usRZXsvCd_lTBs8DeukKhrDtV8_Q8gMYi_IggSbbXPsHbx3SJDKY3gjNLnl/exec';
-    const newUrl = 'https://script.google.com/macros/s/AKfycbwDiJIJEX4eNq_OltvqvNw7FBaELGOQbwcBuXYxE4im2UYCjxmPosJsFmhGqSJGvwar/exec';
+    const oldUrl4 = 'https://script.google.com/macros/s/AKfycbwDiJIJEX4eNq_OltvqvNw7FBaELGOQbwcBuXYxE4im2UYCjxmPosJsFmhGqSJGvwar/exec';
+    const newUrl = 'https://script.google.com/macros/s/AKfycbwpF0r51WTJNcZ041Zja9Mp6toGI1HF4IdTg-PvjSYX0xxbnfYv7pfFFU-Dk1Y0RS0uAg/exec';
     
-    if (!saved || saved === oldUrl1 || saved === oldUrl2 || saved === oldUrl3) {
+    if (!saved || saved === oldUrl1 || saved === oldUrl2 || saved === oldUrl3 || saved === oldUrl4) {
       localStorage.setItem('kntn_backend_url', newUrl);
       return newUrl;
     }

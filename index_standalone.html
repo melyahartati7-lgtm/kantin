@@ -383,8 +383,19 @@
   <!-- ================= JAVASCRIPT SYSTEM LOGIC ================= -->
   <script>
     // URL BACKEND GOOGLE APPS SCRIPT TARGET REDIRECTS
-    const DEFAULT_BACKEND = 'https://script.google.com/macros/s/AKfycbwDiJIJEX4eNq_OltvqvNw7FBaELGOQbwcBuXYxE4im2UYCjxmPosJsFmhGqSJGvwar/exec';
-    let URL_BACKEND = localStorage.getItem('standalone_kntn_backend_url') || DEFAULT_BACKEND;
+    const DEFAULT_BACKEND = 'https://script.google.com/macros/s/AKfycbwpF0r51WTJNcZ041Zja9Mp6toGI1HF4IdTg-PvjSYX0xxbnfYv7pfFFU-Dk1Y0RS0uAg/exec';
+    let URL_BACKEND = localStorage.getItem('standalone_kntn_backend_url');
+    // Auto upgrade if it matches previous versions
+    const oldStandalones = [
+      'https://script.google.com/macros/s/AKfycbxhZKxVjsKqt0XbJUpQCav1FFmHhLYLVYWNtNlmCOtebUtT3m07Zfi3adAySfW6UR4A/exec',
+      'https://script.google.com/macros/s/AKfycbkmRG4usRZXsvCd_lTBs8DeukKhrDtV8_Q8gMYi_IggSbbXPsHbx3SJDKY3gjNLnl/exec',
+      'https://script.google.com/macros/s/AKfycbxbkmRG4usRZXsvCd_lTBs8DeukKhrDtV8_Q8gMYi_IggSbbXPsHbx3SJDKY3gjNLnl/exec',
+      'https://script.google.com/macros/s/AKfycbwDiJIJEX4eNq_OltvqvNw7FBaELGOQbwcBuXYxE4im2UYCjxmPosJsFmhGqSJGvwar/exec'
+    ];
+    if (!URL_BACKEND || oldStandalones.includes(URL_BACKEND)) {
+      localStorage.setItem('standalone_kntn_backend_url', DEFAULT_BACKEND);
+      URL_BACKEND = DEFAULT_BACKEND;
+    }
 
     // Seeding mock offline product backups
     const MOCK_PRODUCTS = [
